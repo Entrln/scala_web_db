@@ -6,23 +6,16 @@
  */
 
 plugins {
-    // Apply the scala Plugin to add support for Scala.
     id 'scala'
-
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
-    // Use Scala 2.13 in our library project
     implementation libs.scala.library
-
-    // This dependency is used by the application.
     implementation libs.guava
 
     // Akka
@@ -34,27 +27,20 @@ dependencies {
     implementation libs.akka.stream
     implementation libs.akka.http.spray.json
     implementation libs.io.spray.json
-
     //
-    implementation libs.shapeless
-//    implementation libs.slick.pg
-//    implementation libs.slick.pg.json
     implementation libs.slick
     implementation libs.slick.hikaricp
-    // implementation libs.spray.json
-
     //
     implementation(libs.spring.context)
     implementation(libs.springframework.jdbc)
     //
     implementation libs.postgres
-
-    // Use Scalatest for testing our library
+    implementation libs.shapeless
+    // Scalatest
     testImplementation libs.junit
     testImplementation libs.scalatest.v2.v13
     testImplementation libs.junit.v4.v13.v2.v13
 
-    // Need scala-xml at test runtime
     testRuntimeOnly libs.scala.xml.v2.v13
 }
 
