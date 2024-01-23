@@ -19,6 +19,15 @@ import scala.language.postfixOps
  * - Akka/ Akka Http.
  * - Slick.
  *
+ *
+ *
+ * todo: Improve error handling in MoviesDataActor and MoviesService. It should not return the internal error.
+ * todo: Refactor code.
+ * todo: Revisit timeout. Use more granular timeouts (read, insert....etc).
+ * todo: Fix duplicate declarations in DatabaseActor and ApplicationConfiguration.
+ *
+ *
+ *
  */
 object App {
   private val applicationContext: AnnotationConfigApplicationContext = new AnnotationConfigApplicationContext(classOf[AppConfiguration])
